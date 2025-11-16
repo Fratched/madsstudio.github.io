@@ -15,15 +15,15 @@ body {
     background: linear-gradient(135deg, #ff0040, #6600ff);
 }
 
-    .hero h1 {
-        font-size: 4rem;
-        margin-bottom: 10px;
-    }
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
 
-    .hero p {
-        font-size: 1.3rem;
-        opacity: 0.9;
-    }
+.hero p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
 
 .cta {
     margin-top: 20px;
@@ -38,9 +38,9 @@ body {
     transition: 0.2s;
 }
 
-    .cta:hover {
-        transform: scale(1.05);
-    }
+.cta:hover {
+    transform: scale(1.05);
+}
 
 /* About Section */
 .about {
@@ -67,13 +67,61 @@ body {
     border-radius: 12px;
     width: 250px;
     text-align: left;
-    transition: 0.2s;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-    .project-card:hover {
-        transform: translateY(-5px);
-        background: #2a2a2a;
+.project-card:hover {
+    transform: translateY(-5px);
+    background: #2a2a2a;
+}
+
+/* MadDice Card Specific Styles */
+.mad-dice-card {
+    cursor: pointer;
+    border: 2px solid transparent;
+    min-height: 200px;
+}
+
+.mad-dice-card:hover {
+    border-color: #ff0040;
+    box-shadow: 0 8px 24px rgba(255, 0, 64, 0.3);
+}
+
+.mad-dice-card.active {
+    background: linear-gradient(135deg, #1a1a1a, #2a1a2a);
+}
+
+.click-hint {
+    margin-top: 15px;
+    padding: 8px 12px;
+    background: rgba(255, 0, 64, 0.2);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #ff0040;
+    font-weight: bold;
+    text-align: center;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
     }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+.dice-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
 
 /* Footer */
 .footer {
@@ -81,4 +129,20 @@ body {
     background: #111;
     margin-top: 40px;
     opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .project-card {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .dice-container {
+        gap: 15px;
+    }
 }
